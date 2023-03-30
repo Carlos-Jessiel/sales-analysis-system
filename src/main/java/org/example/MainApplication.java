@@ -14,6 +14,7 @@ public class MainApplication {
 
             List<String> dataRead = readAndWriter.readFilesInPath();
 
+            finalData.add(GetData.countCustomers(dataRead));
         }
     }
 }
