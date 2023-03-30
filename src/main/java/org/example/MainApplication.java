@@ -17,6 +17,7 @@ public class MainApplication {
             finalData.add(GetData.countCustomers(dataRead));
             finalData.add(GetData.countSellers(dataRead));
             finalData.add(GetData.moreExpansiveSalle(dataRead));
+            finalData.add(GetData.worstSeller(dataRead));
         }
     }
 }
