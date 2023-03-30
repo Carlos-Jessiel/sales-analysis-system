@@ -9,6 +9,10 @@ public class GetData {
         return "Total de clientes: " + count(dataRead, "002");
     }
 
+    public static String countSellers(List<String> dataRead) {
+        return "Total de vendedores " + count(dataRead, "001");
+    }
+
     public static Integer count(List<String> dataRead, String id) {
         int count = 0;
         for (String dadosLido : dataRead) {

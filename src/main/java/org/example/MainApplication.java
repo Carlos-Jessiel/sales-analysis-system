@@ -15,6 +15,7 @@ public class MainApplication {
             List<String> dataRead = readAndWriter.readFilesInPath();
 
             finalData.add(GetData.countCustomers(dataRead));
+            finalData.add(GetData.countSellers(dataRead));
         }
     }
 }
