@@ -12,6 +12,7 @@ public class MainApplication {
             List<String> finalData = new ArrayList<>();
             ReadAndWriter readAndWriter = new ReadAndWriter();
 
+            List<String> dataRead = readAndWriter.readFilesInPath();
 
         }
     }
