@@ -46,4 +46,23 @@ public class ReadAndWriter {
         }
         return null;
     }
+
+    public boolean writerFile(List<String> finalData) {
+        String pathWriter = "src/HOMEPATH/data/out/dataOut.txt";
+        try {
+            OutputStream output = new FileOutputStream(pathWriter);
+            Writer writer = new OutputStreamWriter(output);
+            BufferedWriter bufferedWriter = new BufferedWriter(writer);
+
+            for (String line : finalData){
+                bufferedWriter.write(line);
+                bufferedWriter.newLine();
+            }
+            bufferedWriter.close();
+
+            return true;
+        } catch (IOException e) {
+            return false;
+        }
+    }
 }
