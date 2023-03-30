@@ -4,8 +4,12 @@ import java.util.List;
 
 public class FilterData {
 
-    public static List<String> saleIdSale(List<String> dataRead) {
+    public static List<String> saleIdFilter(List<String> dataRead) {
         return dataSales(dataRead, 1);
+    }
+
+    public static List<String> worstSellerFilter(List<String> dataRead) {
+        return dataSales(dataRead, 3);
     }
 
     public static List<Double> purchaseValueFilter(List<String> dataRead) {
