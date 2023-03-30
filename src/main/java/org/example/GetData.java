@@ -16,10 +16,8 @@ public class GetData {
         List<String> idList = FilterData.saleIdFilter(dataRead);
         List<Double> purchaseValue = FilterData.purchaseValueFilter(dataRead);
 
-        Map<Double, String> mapList = new HashMap<>();
-        for (int i = 0; i < idList.size(); i++) {
-            mapList.put(purchaseValue.get(i), idList.get(i));
-        }
+        var mapList = map(idList, purchaseValue);
+
         return "Id da venda mais cara: " + mapList.getOrDefault(Collections.max(purchaseValue), idList.toString());
     }
 
@@ -27,11 +25,17 @@ public class GetData {
         List<String> nameSeller = FilterData.worstSellerFilter(dataRead);
         List<Double> purchaseValue = FilterData.purchaseValueFilter(dataRead);
 
-        Map<Double, String> mapList = new HashMap<>();
-        for (int i = 0; i < nameSeller.size(); i++) {
-            mapList.put(purchaseValue.get(i), nameSeller.get(i));
-        }
+        var mapList = map(nameSeller, purchaseValue);
+
         return "Pior vendedor: " + mapList.getOrDefault(Collections.min(purchaseValue), nameSeller.toString());
+    }
+
+    public static Map<Double, String> map(List<String> data, List<Double> value){
+        Map<Double, String> mapList = new HashMap<>();
+        for (int i = 0; i < data.size(); i++) {
+            mapList.put(value.get(i), data.get(i));
+        }
+        return mapList;
     }
 
     public static Integer count(List<String> dataRead, String id) {
